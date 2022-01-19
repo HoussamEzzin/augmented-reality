@@ -1,14 +1,5 @@
 
-# Useful links
-# http://www.pygame.org/wiki/OBJFileLoader
-# https://rdmilligan.wordpress.com/2015/10/15/augmented-reality-using-opencv-opengl-and-blender/
-# https://clara.io/library
-
-# TODO -> Implement command line arguments (scale, model and object to be projected)
-#      -> Refactor and organize code (proper funcition definition and separation, classes, error handling...)
-
 import argparse
-
 import cv2
 import numpy as np
 import math
@@ -138,7 +129,7 @@ def projection_matrix(camera_parameters, homography):
     rot_1 = col_1 / l
     rot_2 = col_2 / l
     translation = col_3 / l
-    # compute the orthonormal basis
+    # compute the orthonormal basis²²
     c = rot_1 + rot_2
     p = np.cross(rot_1, rot_2)
     d = np.cross(c, p)
